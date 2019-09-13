@@ -18,7 +18,6 @@ const Navbar = ({ title, icon }) => {
 
     const authLinks = (
         <Fragment>
-            <li> Hello {user && user.name} </li>
             <li>
                 <a onClick={logoutAndClear} href="#!">
                     <i className="fas fa-sign-out-alt"></i>
@@ -40,17 +39,17 @@ const Navbar = ({ title, icon }) => {
     );
 
     return (
-        <div className="navbar bg-primary navbar-dark navbar-expand-md">
-            <h2>
+        <div className="navbar bg-primary navbar-dark navbar-expand-md py-0">
+            <h3>
                 <i className={icon} /> {title}
-            </h2>
+            </h3>
             <ul className="pt-3">{isAuth ? authLinks : links}</ul>
         </div>
     );
 };
 
 Navbar.defaultProps = {
-    title: 'Contact Keeper',
+    title: 'Contact Book',
     icon: 'fas fa-id-card-alt'
 };
 

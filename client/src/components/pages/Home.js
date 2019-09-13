@@ -16,15 +16,20 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="grid-2">
-            <div>
-                <ContactForm></ContactForm>
+        <div className="row">
+            <div className="col-12">
+                <div className="card-body border rounded mx-5">
+                    <div>
+                        <ContactForm></ContactForm>
+                    </div>
+                </div>
             </div>
+            <div className="col-12">
+                <div className="card-body mt-4 border rounded mx-5">
+                    <ContactFilter />
 
-            <div>
-                <ContactFilter />
-
-                <Contacts />
+                    <Contacts />
+                </div>
             </div>
         </div>
     );

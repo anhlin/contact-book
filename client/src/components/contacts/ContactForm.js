@@ -57,7 +57,7 @@ const ContactForm = () => {
     return (
         <form onSubmit={onFormSubmit}>
             <h2 className="text-primary">
-                {current ? 'Edit Contact' : 'Add Contact'}
+                {current ? 'Edit Contact' : 'Add a Contact'}
             </h2>
             <input
                 type="text"
@@ -80,7 +80,7 @@ const ContactForm = () => {
                 value={phone}
                 onChange={onFormChange}
             ></input>
-            <h4>Contact Type</h4>
+            <h4> Type</h4>
             <input
                 type="radio"
                 name="type"
@@ -95,26 +95,24 @@ const ContactForm = () => {
                 value="professional"
                 checked={type === 'professional'}
                 onChange={onFormChange}
+                className="ml-3"
             ></input>{' '}
             Professional
             <div>
                 <input
                     type="submit"
                     value={current ? 'Update' : 'Save'}
-                    className="btn-btn-primary btn-block"
+                    className="btn"
                 ></input>
+                {current && (
+                    <div className="d-inline">
+                        <button className="btn btn-danger" onClick={clearAll}>
+                            {' '}
+                            Cancel{' '}
+                        </button>
+                    </div>
+                )}
             </div>
-            {current && (
-                <div>
-                    <button
-                        className="btn btn-light btn-block"
-                        onClick={clearAll}
-                    >
-                        {' '}
-                        Cancel{' '}
-                    </button>
-                </div>
-            )}
         </form>
     );
 };

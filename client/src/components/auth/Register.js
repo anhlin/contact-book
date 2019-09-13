@@ -56,31 +56,30 @@ const Register = props => {
         }
     };
     return (
-        <div className="container w-50">
+        <div className="container w-50 border mt-4">
             <h1 className="text-center pt-4">
                 Account <span className="text-primary">Register</span>
             </h1>
             <form onSubmit={onSubmit}>
                 <div className="form-group pt-5">
-                    <label htmlFor="name">Name</label>
                     <input
                         type="text"
                         name="name"
                         value={name}
                         onChange={onChange}
+                        placeholder="Name"
                     ></input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
                     <input
                         type="email"
                         name="email"
                         value={email}
                         onChange={onChange}
+                        placeholder="email"
                     ></input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         name="password"
@@ -88,15 +87,16 @@ const Register = props => {
                         onChange={onChange}
                         required
                         minLength="6"
+                        placeholder="Password"
                     ></input>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password2">Re-enter Password</label>
                     <input
                         type="password"
                         name="password2"
                         value={password2}
                         onChange={onChange}
+                        placeholder="Confirm password"
                     ></input>
                 </div>
                 <div className="text-center w-100">

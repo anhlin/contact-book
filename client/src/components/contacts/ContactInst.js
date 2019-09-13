@@ -11,6 +11,10 @@ export default function ContactInst({ contact }) {
         clearCurrent();
     };
 
+    const editClick = () => {
+        window.scroll(0, 0);
+    };
+
     return (
         <div className="card bg-light">
             <h3 className="text-primary text-left">
@@ -42,7 +46,10 @@ export default function ContactInst({ contact }) {
             <p>
                 <button
                     className="btn btn-dark btn-sm"
-                    onClick={() => setCurrent(contact)}
+                    onClick={() => {
+                        setCurrent(contact);
+                        editClick();
+                    }}
                 >
                     Edit
                 </button>

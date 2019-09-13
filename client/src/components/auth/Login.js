@@ -38,38 +38,45 @@ const Login = props => {
         });
     };
     return (
-        <div>
-            <h1>
+        <div className="container border justify-content-center p-4 mt-4">
+            <h1 className="text-center">
                 Account <span className="text-primary">Log In</span>
             </h1>
-            <form onSubmit={onSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Email</label>
-                    <input
-                        type="text"
-                        name="email"
-                        value={email}
-                        onChange={onChange}
-                        required
-                    ></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="name">Password</label>
-                    <input
-                        type="text"
-                        name="password"
-                        value={password}
-                        onChange={onChange}
-                        required
-                    ></input>
-                </div>
+            <div className="row">
+                <div className="col-8 m-auto">
+                    <form onSubmit={onSubmit}>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="email"
+                                value={email}
+                                onChange={onChange}
+                                placeholder="email"
+                                required
+                            ></input>
+                        </div>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="password"
+                                value={password}
+                                onChange={onChange}
+                                placeholder="password"
+                                required
+                            ></input>
+                        </div>
 
-                <input
-                    type="submit"
-                    value="Login"
-                    className="btn btn-primary btn-block"
-                ></input>
-            </form>
+                        <input
+                            type="submit"
+                            value="Login"
+                            className="btn btn-block text-primary"
+                        ></input>
+                    </form>
+                </div>
+                <div className="col-12 text-center">
+                    <small className="text-muted">No Account? Register! </small>
+                </div>
+            </div>
         </div>
     );
 };
