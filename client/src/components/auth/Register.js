@@ -2,11 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
-import Alerts from '../../components/layout/Alerts';
-
 const Register = props => {
     const alertContext = useContext(AlertContext);
-    const { setAlert, alerts } = alertContext;
+    const { setAlert } = alertContext;
 
     const authContext = useContext(AuthContext);
     const { register, clearErr, error, isAuth } = authContext;
