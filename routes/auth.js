@@ -42,13 +42,14 @@ router.post(
         try {
             let user = await User.findOne({ email });
 
+            //Email not found
             if (!user) {
                 return res
                     .status(400)
                     .json({ msg: 'Invalid Email or Password' });
             }
 
-            //Check if passwords match
+            //Check if plain text and stored passwords match
             const isMatch = await bcrypt.compare(password, user.password);
 
             //Invalid password entered

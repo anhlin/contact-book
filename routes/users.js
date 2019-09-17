@@ -44,11 +44,12 @@ router.post(
                 password
             });
 
-            //Hash the password
+            //Generate salt for each user's password
             const salt = await bcrypt.genSalt(10).catch(() => {
                 console.log('Error generating salt');
             });
 
+            //Hash the password with the salt
             user.password = await bcrypt
                 .hash(password, salt)
                 .catch(() => console.log('Error generating password'));
